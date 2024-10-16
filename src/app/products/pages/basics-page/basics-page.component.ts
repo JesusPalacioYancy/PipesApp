@@ -9,5 +9,8 @@ export class BasicsPageComponent {
 
   public nameLower: string = 'JESUS PALACIO';
   public nameUpper: string = 'jesus palacio';
-  public nameTitle: string = 'jEsUs pAlAcIo'
+  public nameTitle: string = 'jEsUs pAlAcIo';
+
+  public customDate: Date = new Date()
+
 }
