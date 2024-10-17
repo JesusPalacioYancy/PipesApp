@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { interval, Observable, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-uncommon-page',
-  templateUrl: './uncommon-page.component.html',
-  styleUrl: './uncommon-page.component.css'
+  selector: 'products-uncommon-page',
+  templateUrl: './uncommon-page.component.html'
 })
 export class UncommonPageComponent {
 
@@ -29,12 +29,35 @@ export class UncommonPageComponent {
   '=1' : 'tenemos un cliente esperando',
   '=2' : 'tenemos 2 clientes esperando',
   'other' : 'tenemos # clientes esperando'
- }
+ };
 
 
  deleteClient():void{
   this.clients.shift();
- }
+ };
+
+
+
+ // KeyValuePipe | JsonPipe
+
+ public person = {
+  name: 'Jesus',
+  age: 19,
+  height: 1.84,
+  address: 'Colombia, Soledad'
+ };
+
+ // AsyncPipe
+ public myObservableTimer:Observable<number> = interval(2000).pipe(
+  tap( value => console.log('value:',value) )
+  );
+
+ public myPromiceValue: Promise<string> = new Promise( (res, rec) => {
+  setTimeout(() => {
+    res('Tenemos datos')
+    console.log('Tenemos datos')
+  }, 3500);
+ })
 
 
 
