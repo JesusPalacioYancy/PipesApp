@@ -2,7 +2,7 @@ import { Pipe, type PipeTransform } from '@angular/core';
 import { Hero } from '../interface/hero.interface';
 
 @Pipe({
-  name: 'sortBy'
+  name: 'sortByPipe'
 })
 export class SortByPipe implements PipeTransform {
 
@@ -16,8 +16,8 @@ export class SortByPipe implements PipeTransform {
       case 'color':
         return heroes.sort((a,b) => (a.color > b.color )? 1:-1 )
       default : return heroes
+      
     }
-
    
   }
 

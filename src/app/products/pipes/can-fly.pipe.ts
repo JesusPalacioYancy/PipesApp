@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CanFlyPipe implements PipeTransform {
 
-  transform(value: boolean): 'vuela'| 'no vuela' {
-    return value ? 'vuela': 'no vuela'
+  transform(value: boolean): 'fly to'| 'does not fly ' {
+    return value ? 'fly to': 'does not fly '
   };
 
 }
